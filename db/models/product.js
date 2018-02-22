@@ -17,6 +17,20 @@ const productSchema = mongoose.Schema({
 
 });
 
-
 const ProductModel = mongoose.Model('Product', productSchema);
 
+const save = (product, callback) => {
+  ProductModel.create(product, callback);
+};
+
+// for finding all object and setting them as state for ReviewSection
+//    then within Review Section pass on state to ReviewList
+//      from within ReviewList display 10 reviews.  button to show more.
+const findAll = (callback) => {
+  ProductModel
+    .find()
+    .exec(callback);
+};
+
+exports.save = save;
+exports.findAll = findAll;
