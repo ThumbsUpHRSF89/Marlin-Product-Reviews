@@ -1,5 +1,5 @@
 {
-  "name": "Product-Reviews-Component",
+  "name": "ProductReviewsComponent",
   "version": "",
   "description": "component which displays customer ratings and reviews",
   "author": "Marlin Dalpozzo",
@@ -9,8 +9,9 @@
   },
   "scripts": {
     "start": "nodemon server/server.js",
-    "webpack-server": "webpack-dev-server --progress --colors --config ./webpack.config.js",
-    "webpack": "webpack -d --watch"
+    "build": "webpack -d --watch",
+    "dev": "mongod",
+    "seed": "node db/seeder.js"
   },
   "babel": {
     "presets": [
