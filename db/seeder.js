@@ -2,7 +2,7 @@ const data = require('./sampleReviewData');
 const mongoose = require('mongoose');
 const reviewController = require('./models/reviews.js');
 
-mongoose.connect('mongodb://localhost/hackazon');
+mongoose.connect('mongodb://localhost/hackazonReviews');
 
 const seedDb = (dataArray) => {
   console.log('storing data...', dataArray);
