@@ -8,15 +8,28 @@ class ReviewSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: [],
+      reviews: [],
     };
+  }
+
+  // componentWillMount
+  componentDidMount() {
+    const { location: { pathname } } = window;
+    const productID = Number(pathname.split('/').pop());
+    $.get('/product/:id', { id: productID }, (data) => {
+      console.log('data recieved from server to component', data);
+      this.setState({
+        reviews: data,
+      });
+    });
   }
 
   render() {
     return (
       <div>
         <h3>Customer Reviews</h3>
-        <ReviewList />
+        <div>HISTOGRAM</div>
+        <ReviewList reviews={this.state.reviews} />
       </div>
     );
   }
