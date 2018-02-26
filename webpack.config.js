@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: [
-    './client/src/customerReviews.jsx',
+    './client/src/reviewSection.jsx',
   ],
   module: {
     rules: [
@@ -21,7 +21,7 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js',
   },
-  devServer: {
-    contentBase: './client/dist',
-  },
+  // devServer: {
+  //   contentBase: './client/dist',
+  // },
 };
