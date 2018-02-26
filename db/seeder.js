@@ -6,11 +6,11 @@ mongoose.connect('mongodb://localhost/hackazonReviews');
 
 const seedDb = (dataArray) => {
   console.log('storing data...', dataArray);
-  reviewController.saveAll(dataArray, (err, docs) => {
+  reviewController.saveAll(dataArray, (err) => {
     if (err) {
       throw err;
     } else {
-      console.log('yaaay');
+      console.log('yaaay data stored succesfully');
     }
   });
 };

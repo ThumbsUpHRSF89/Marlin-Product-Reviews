@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/../client/dist/')));
 
 app.get('/product/*', (req, res) => {
-  const productID = req.query.id;
+  const { productID } = req.query;
   reviewController.findByProductID(productID, (err, data) => {
     if (err) {
       throw err;
