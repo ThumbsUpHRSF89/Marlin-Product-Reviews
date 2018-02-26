@@ -16,7 +16,7 @@ class ReviewSection extends React.Component {
   componentDidMount() {
     const { location: { pathname } } = window;
     const productID = Number(pathname.split('/').pop());
-    $.get('/product/:id', { id: productID }, (data) => {
+    $.get('/product/:id', { productID }, (data) => {
       console.log('data recieved from server to component', data);
       this.setState({
         reviews: data,

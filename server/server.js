@@ -7,13 +7,13 @@ const reviewController = require('../db/models/reviews.js');
 const app = express();
 const port = 8002;
 
-mongoose.connect('mongodb://localhost/hackazon');
+mongoose.connect('mongodb://localhost/hackazonReviews');
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/../client/dist/')));
 
 app.get('/product/*', (req, res) => {
-  const productID = req.query.id;
+  const { productID } = req.query;
   reviewController.findByProductID(productID, (err, data) => {
     if (err) {
       throw err;
