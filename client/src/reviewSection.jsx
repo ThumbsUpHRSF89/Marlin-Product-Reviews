@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import RatingsHistogram from './components/ratingsHistogram';
+// import RatingsHistogram from './components/ratingsHistogram';
 import ReviewList from './components/reviewList';
 
 class ReviewSection extends React.Component {
@@ -34,5 +34,3 @@ class ReviewSection extends React.Component {
     );
   }
 }
-
-ReactDOM.render(<ReviewSection />, document.getElementById('ReviewSection'));
