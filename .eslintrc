@@ -1,3 +1,13 @@
 {
-  "extends": "airbnb"
+  "extends": "airbnb",
+  "env": {
+    "jest": true,
+    "browser": true,
+    "node": true,
+    "jasmine": true
+  },
+  "rules": {
+    "no-console": 0,
+    "no-unused-vars": 1
+  }
 }
