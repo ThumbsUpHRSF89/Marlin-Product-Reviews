@@ -28,7 +28,7 @@ class ReviewSection extends React.Component {
     return (
       <div>
         <h3>Customer Reviews</h3>
-        <div>HISTOGRAM</div>
+        <div>---HISTOGRAM</div>
         <ReviewList reviews={this.state.reviews} />
       </div>
     );
