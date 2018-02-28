@@ -21,7 +21,6 @@ app.get('/hooligan', (req, res) => {
       throw err;
     } else {
       res.json(data);
-      res.redirect('/');
     }
   });
 });

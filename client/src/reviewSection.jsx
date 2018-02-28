@@ -35,4 +35,4 @@ class ReviewSection extends React.Component {
   }
 }
 
-ReactDOM.render(<ReviewSection />, document.getElementById('ReviewSection'));
+ReactDOM.render(<ReviewSection />, document.getElementById('reviewSection'));
