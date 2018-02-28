@@ -12,11 +12,10 @@ class ReviewSection extends React.Component {
     };
   }
 
-  // componentWillMount
-  componentDidMount() {
+  componentWillMount() {
     const { location: { pathname } } = window;
     const productID = Number(pathname.split('/').pop());
-    $.get('/product/:id', { productID }, (data) => {
+    $.get('/hooligan', { productID }, (data) => {
       console.log('data recieved from server to component', data);
       this.setState({
         reviews: data,
@@ -34,4 +33,5 @@ class ReviewSection extends React.Component {
     );
   }
 }
+
 ReactDOM.render(<ReviewSection />, document.getElementById('ReviewSection'));
