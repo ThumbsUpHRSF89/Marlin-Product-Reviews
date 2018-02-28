@@ -12,7 +12,7 @@
     "build": "webpack -d --watch",
     "dev": "mongod",
     "seed": "node db/seeder.js",
-    "test": "jest",
+    "test": "jest --forceExit",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },
