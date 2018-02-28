@@ -11,14 +11,11 @@ mongoose.connect('mongodb://localhost/hackazonReviews');
 
 app.use(bodyParser.json());
 app.use('/product/:id/', express.static(path.join(__dirname, '/../client/dist/')));
-app.use('/product/:id/', express.static(path.join(__dirname, '/../client/dist/images')));
-
-// app.get('/product/id', (req, res) => {
-//   res.sendFile(path.join(__dirname, '/../client/dist/index.html'));
-// });
+// app.use('/product/:id/', express.static(path.join(__dirname, '/../client/dist/images')));
 
 app.get('/hooligan', (req, res) => {
   const { productID } = req.query;
+  console.log(req.query);
   reviewController.findByProductID(productID, (err, data) => {
     if (err) {
       throw err;
