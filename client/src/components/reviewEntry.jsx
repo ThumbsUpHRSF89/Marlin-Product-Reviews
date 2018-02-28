@@ -15,7 +15,7 @@ const ReviewEntry = (props) => {
   return (
     <div className="reviewEntry">
       <div className="profileBanner">
-        <img className="profileImage" src="/images/profile1.png" alt="profile" />
+        <img className="profileImage" src="images/profile1.png" alt="profile" />
         <span className="username">{username}</span>
       </div>
       <div className="starHeader">
