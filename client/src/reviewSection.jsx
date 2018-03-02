@@ -4,6 +4,8 @@ import $ from 'jquery';
 // import RatingsHistogram from './components/ratingsHistogram';
 import ReviewList from './components/reviewList';
 import CustomerImages from './components/customerImages';
+import RecentReviews from './components/recentReviews';
+import KeywordFilter from './components/keywordFilter';
 
 class ReviewSection extends React.Component {
   constructor(props) {
@@ -28,14 +30,20 @@ class ReviewSection extends React.Component {
 
   render() {
     return (
-      <div className="reviewService">
+      <div className="left-column">
         <div className="topCustomerReviews">
           <h3 className="sectionTitle">Customer Reviews</h3>
           <div>---HISTOGRAM</div>
+          <KeywordFilter />
           <ReviewList reviews={this.state.reviews} />
         </div>
-        <div className="customerImagesSection">
-          <CustomerImages images={this.state.customerImages} />
+        <div className="right-column">
+          <div className="customerImagesSection">
+            <CustomerImages images={this.state.customerImages} />
+          </div>
+          <div className="recentReviewsSection">
+            <RecentReviews />
+          </div>
         </div>
       </div>
     );

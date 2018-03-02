@@ -2,23 +2,51 @@ body {
   font-family: sans-serif;
 }
 
-.reviewService {
+.left-column {
   display: flex;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+  padding-top: 18rem;
 }
 
 .topCustomerReviews {
   width: 68%;
+  /* border: 1px solid black; */
+}
+
+.keywordFilterTitle {
+  
 }
 
 .customerImagesSection {
-  width: 32%;
-  position: relative;
+  height: 25rem;
   top: 18rem;
+  /* border: 1px solid black; */
+}
+
+.customerImageTitle {
+  margin-bottom: .7rem;
+  margin-left: .2rem;
+}
+
+.customerImages {
+  margin: 0;
+  /* border: 1px solid black; */
 }
 
 .customerImage {
-  width: 6.75rem;
-  height: 6.75rem;
+  width: 6.25rem;
+  height: 6.25rem;
+  margin: .15rem;
+}
+
+.recentReviewsSection {
+  /* border: 1px solid black; */
+  height: 20rem;
 }
 
 .sectionTitle {
@@ -80,7 +108,7 @@ body {
   font-size: .85rem;
 }
 
-.commentLink {
+.smallTextLink {
   color: rgb(61, 121, 231);
   font-size: .8rem;
   border-right: 1px solid rgba(128, 128, 128, 0.589);

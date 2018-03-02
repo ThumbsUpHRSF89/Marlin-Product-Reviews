@@ -30,7 +30,7 @@ const ReviewEntry = (props) => {
       <div className="verified">Verified Purchase</div>
       <p className="reviewText">{text}</p>
       <div>
-        <span className="commentLink">Comment</span>
+        <span className="smallTextLink">Comment</span>
         <span className="useful">Was this review helpful to you?</span>
         <button className="yesNo">Yes</button>
         <button className="yesNo">No</button>
