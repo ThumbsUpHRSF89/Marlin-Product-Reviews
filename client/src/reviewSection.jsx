@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 // import RatingsHistogram from './components/ratingsHistogram';
 import ReviewList from './components/reviewList';
+import CustomerImages from './components/customerImages';
 
 class ReviewSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       reviews: [],
+      customerImages: [],
     };
   }
 
@@ -26,10 +28,15 @@ class ReviewSection extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>Customer Reviews</h3>
-        <div>---HISTOGRAM</div>
-        <ReviewList reviews={this.state.reviews} />
+      <div className="reviewService">
+        <div className="topCustomerReviews">
+          <h3 className="sectionTitle">Customer Reviews</h3>
+          <div>---HISTOGRAM</div>
+          <ReviewList reviews={this.state.reviews} />
+        </div>
+        <div className="customerImagesSection">
+          <CustomerImages images={this.state.customerImages} />
+        </div>
       </div>
     );
   }

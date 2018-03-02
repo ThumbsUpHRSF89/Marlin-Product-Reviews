@@ -5,12 +5,13 @@ const path = require('path');
 const reviewController = require('../db/models/reviews.js');
 
 const app = express();
-const port = 8002;
+const port = process.env.PORT || 8002;
 
 mongoose.connect('mongodb://localhost/hackazonReviews');
 
 app.use(bodyParser.json());
-app.use('/product/:id/', express.static(path.join(__dirname, '/../client/dist/')));
+console.log(path.join(__dirname, '/../client/dist/'));
+app.use('/product/:id', express.static(path.join(__dirname, '/../client/dist/')));
 // app.use('/product/:id/', express.static(path.join(__dirname, '/../client/dist/images')));
 
 app.get('/hooligan', (req, res) => {

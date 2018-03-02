@@ -11,6 +11,9 @@ const ReviewEntry = (props) => {
     date,
   } = props.review;
 
+  const starUrl = `images/stars/${rating}stars.png`;
+  const altText = `${rating} star rating`;
+
 
   return (
     <div className="reviewEntry">
@@ -19,12 +22,13 @@ const ReviewEntry = (props) => {
         <span className="username">{username}</span>
       </div>
       <div className="starHeader">
-        <div className="stars">{rating}</div>
+        <img className="stars" src={starUrl} alt={altText} />
+        {/* <div className="stars">{rating}</div> */}
         <h5 className="header">{header}</h5>
       </div>
       <div className="date">{date}</div>
       <div className="verified">Verified Purchase</div>
-      <p>{text}</p>
+      <p className="reviewText">{text}</p>
       <div>
         <span className="commentLink">Comment</span>
         <span className="useful">Was this review helpful to you?</span>
