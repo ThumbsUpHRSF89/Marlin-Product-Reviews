@@ -2,26 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Histogram from './components/histogram';
-import ReviewList from './components/reviewList';
 import CustomerImages from './components/customerImages';
 import RecentReviews from './components/recentReviews';
 import KeywordFilter from './components/keywordFilter';
+import TopCustomerReviews from './components/reviewList';
 
 class ReviewSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       reviews: [],
-      customerImages: [],
     };
   }
 
   componentDidMount() {
     const { location: { pathname } } = window;
     const productID = pathname.slice(0, -1).split('/').pop();
-    console.log(productID);
     $.get('/hooligan', { productID }, (data) => {
-      console.log('data recieved from server to component', data);
       this.setState({
         reviews: data,
       });
@@ -39,8 +36,8 @@ class ReviewSection extends React.Component {
           <div className="keywordFilter">
             <KeywordFilter />
           </div>
-          <div className="topCustomerReviews">
-            <ReviewList reviews={this.state.reviews} />
+          <div id="topCustomerReviews">
+            <TopCustomerReviews reviews={this.state.reviews} />
           </div>
         </div>
         <div className="right-column">
