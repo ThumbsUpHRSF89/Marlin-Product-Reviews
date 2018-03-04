@@ -16,7 +16,7 @@ const repeat = () => {
       product_id: i % 100,
       username: usernames[getRandomInt(0, usernames.length - 1)],
       text: reviewText[getRandomInt(0, reviewText.length - 1)],
-      rating: getRandomInt(0, 5),
+      rating: getRandomInt(1, 5),
       header: headers[getRandomInt(0, headers.length - 1)],
       date: `${months[getRandomInt(0, months.length - 1)]} ${getRandomInt(1, 31)}, ${getRandomInt(2000, 2018)}`,
     };

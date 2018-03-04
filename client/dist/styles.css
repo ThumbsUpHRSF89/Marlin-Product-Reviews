@@ -1,9 +1,15 @@
 body {
   font-family: sans-serif;
+  padding-left: .75rem;
+}
+
+.fullPage {
+  display: flex;
 }
 
 .left-column {
-  display: flex;
+  /* border: 1px solid black; */
+  width: 68%;
 }
 
 .right-column {
@@ -13,10 +19,77 @@ body {
   padding-top: 18rem;
 }
 
+.sectionTitle {
+  color: #C60;
+  margin-bottom: .5rem;
+}
+
 .topCustomerReviews {
-  width: 68%;
   /* border: 1px solid black; */
 }
+
+/* ===== HISTOGRAM ================================================================== */
+
+.histogram {
+  /* border: 1px solid black; */
+}
+
+.histogramBar {
+  height: 1.3rem;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.outerBar {
+  width: 6.33rem;
+  height: 17px;
+  overflow: hidden;
+  border-radius: 1px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.4), inset 0 0 0 1px rgba(0,0,0,.1);
+  background: #f2f2f2;
+  background: -webkit-linear-gradient(top,#eee,#f6f6f6);
+  background: linear-gradient(to bottom,#eee,#f6f6f6);
+  background-color: #f3f3f3;
+}
+
+.innerBar {
+  height: 100%;
+  border-radius: 1px;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.05);
+  background: #fb0;
+  background: -webkit-linear-gradient(top,#ffce00,#ffa700);
+  background: linear-gradient(to bottom,#ffce00,#ffa700);
+  background-color: #ffce00;
+}
+
+.percent {
+  text-align: right;
+  width: 2rem;
+}
+
+.totalStars {
+  width: 6.5rem;
+  height: 1.5rem;
+  margin-left: -0.3rem;
+}
+
+.totalReviews {
+  color: #0066c0;
+  font-size: 17px;
+}
+
+.histogramHeader {
+  display: flex;
+  align-items: center;
+  height: 1.5rem;
+}
+
+.average {
+  margin-top: .2rem;
+}
+
+/* ======================================================================= */
 
 .keywordFilterTitle {
   
@@ -47,10 +120,6 @@ body {
 .recentReviewsSection {
   /* border: 1px solid black; */
   height: 20rem;
-}
-
-.sectionTitle {
-  color: #cc4b10;
 }
 
 .reviewEntry {
@@ -109,7 +178,14 @@ body {
 }
 
 .smallTextLink {
-  color: rgb(61, 121, 231);
+  color: #0066c0;
+  font-size: 13px;
+  padding-right: .25rem;
+  margin-right: .25rem;
+}
+
+.commentLink {
+  color: #0066c0;
   font-size: .8rem;
   border-right: 1px solid rgba(128, 128, 128, 0.589);
   padding-right: 1rem;

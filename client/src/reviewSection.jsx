@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-// import RatingsHistogram from './components/ratingsHistogram';
+import Histogram from './components/histogram';
 import ReviewList from './components/reviewList';
 import CustomerImages from './components/customerImages';
 import RecentReviews from './components/recentReviews';
@@ -30,12 +30,18 @@ class ReviewSection extends React.Component {
 
   render() {
     return (
-      <div className="left-column">
-        <div className="topCustomerReviews">
+      <div className="fullPage">
+        <div className="left-column">
           <h3 className="sectionTitle">Customer Reviews</h3>
-          <div>---HISTOGRAM</div>
-          <KeywordFilter />
-          <ReviewList reviews={this.state.reviews} />
+          <div className="histogram">
+            <Histogram reviews={this.state.reviews} />
+          </div>
+          <div className="keywordFilter">
+            <KeywordFilter />
+          </div>
+          <div className="topCustomerReviews">
+            <ReviewList reviews={this.state.reviews} />
+          </div>
         </div>
         <div className="right-column">
           <div className="customerImagesSection">
