@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ReviewEntry = (props) => {
-
   const {
     product_id,
     username,

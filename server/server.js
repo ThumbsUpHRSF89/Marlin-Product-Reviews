@@ -10,7 +10,7 @@ const port = process.env.PORT || 8002;
 mongoose.connect('mongodb://localhost/hackazonReviews');
 
 app.use(bodyParser.json());
-console.log(path.join(__dirname, '/../client/dist/'));
+// console.log(path.join(__dirname, '/../client/dist/'));
 app.use('/product/:id', express.static(path.join(__dirname, '/../client/dist/')));
 // app.use('/product/:id/', express.static(path.join(__dirname, '/../client/dist/images')));
 
