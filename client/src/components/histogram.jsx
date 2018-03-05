@@ -39,7 +39,7 @@ const KeywordFilter = (props) => {
     return Math.round(num * 2) / 2;
   }
 
-  const totalRatingImageUrl = `images/stars/${ratingsToText[roundToHalf(average)]}stars.png`;
+  const totalRatingImageUrl = `images/stars/${ratingsToText[roundToHalf(average)]}Stars.png`;
 
   return (
     <div>
