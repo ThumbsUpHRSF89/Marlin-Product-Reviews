@@ -30,7 +30,6 @@ class ReviewSection extends React.Component {
   }
 
   render() {
-    console.log('parentAPP, printing state from render method:', this.state.reviews);
     return (
       <div className="fullPage">
         <div className="left-column">
@@ -58,4 +57,5 @@ class ReviewSection extends React.Component {
   }
 }
 
-ReactDOM.render(<ReviewSection />, document.getElementById('reviewSection'));
+export default ReviewSection;
+// ReactDOM.render(<ReviewSection />, document.getElementById('reviewSection'));

@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: [
-    './client/src/reviewSection.jsx',
+    './client/src/main.jsx',
   ],
   module: {
     rules: [
