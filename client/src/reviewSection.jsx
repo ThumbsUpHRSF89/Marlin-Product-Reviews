@@ -16,6 +16,10 @@ class ReviewSection extends React.Component {
   }
 
   componentDidMount() {
+    this.getData();
+  }
+
+  getData() {
     const { location: { pathname } } = window;
     const productID = pathname.slice(0, -1).split('/').pop();
     $.get('/hooligan', { productID }, (data) => {
@@ -26,6 +30,7 @@ class ReviewSection extends React.Component {
   }
 
   render() {
+    console.log('parentAPP, printing state from render method:', this.state.reviews);
     return (
       <div className="fullPage">
         <div className="left-column">
