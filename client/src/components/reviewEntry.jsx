@@ -24,7 +24,7 @@ const ReviewEntry = (props) => {
     5: 'five',
   };
 
-  const starUrl = `images/stars/${ratingsToText[rating]}Stars.png`;
+  const starUrl = `images/${ratingsToText[rating]}Stars.png`;
   const altText = `${rating} star rating`;
 
   return (
