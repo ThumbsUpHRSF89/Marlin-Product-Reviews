@@ -1,4 +1,5 @@
 import React from 'react';
+// import Profile1 from '../../dist/images/profile1.png';
 
 const ReviewEntry = (props) => {
   const {
@@ -24,13 +25,28 @@ const ReviewEntry = (props) => {
     5: 'five',
   };
 
-  const starUrl = `images/${ratingsToText[rating]}Stars.png`;
+  const ratingsToImages = {
+    0: 'https://i.imgur.com/Rkgfr0G.png',
+    0.5: 'https://i.imgur.com/s2QICNo.png',
+    1: 'https://i.imgur.com/d2D5zpv.png',
+    1.5: 'https://i.imgur.com/UAF0Me4.png',
+    2: 'https://i.imgur.com/B2Bmx6i.png',
+    2.5: 'https://i.imgur.com/u8ZNfDc.png',
+    3: 'https://i.imgur.com/c4dbZIj.png',
+    3.5: 'https://i.imgur.com/fMoxZsH.png',
+    4: 'https://i.imgur.com/IzbFlA3.png',
+    4.5: 'https://i.imgur.com/gz25F3Z.png',
+    5: 'https://i.imgur.com/rBSNt0s.png',
+  };
+
+  const starUrl = ratingsToImages[rating];
+  // const starUrl = `images/${ratingsToText[rating]}Stars.png`;
   const altText = `${rating} star rating`;
 
   return (
     <div className="reviewEntry">
       <div className="profileBanner">
-        <img className="profileImage" src="images/profile1.png" alt="profile" />
+        <img className="profileImage" src="https://i.imgur.com/UStIY6n.jpg" alt="profile" />
         <span className="username">{username}</span>
       </div>
       <div className="starHeader">
