@@ -1,5 +1,4 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import ReviewSection from '../client/src/reviewSection';
 
 describe('<ReviewSection />', () => {
