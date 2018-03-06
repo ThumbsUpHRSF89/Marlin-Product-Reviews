@@ -15,8 +15,8 @@ class TopCustomerReviews extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log('reviewList, componentDidUpdate, props:', this.props);
-    console.log('reviewList, comonentDidUpdate, state:', this.state);
+    // console.log('reviewList, componentDidUpdate, props:', this.props);
+    // console.log('reviewList, comonentDidUpdate, state:', this.state);
     if (this.state.reviews.length === 0) {
       this.getData();
     }
@@ -82,7 +82,7 @@ class TopCustomerReviews extends React.Component {
   }
 
   render() {
-    console.log('RENDER:', this.state.totalPages);
+    // console.log('RENDER:', this.state.totalPages);
     const buttons = [];
     for (let i = 1; i <= this.state.totalPages; i += 1) {
       buttons.push(i);

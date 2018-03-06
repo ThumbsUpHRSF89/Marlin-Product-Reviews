@@ -22,7 +22,7 @@ class ReviewSection extends React.Component {
   getData() {
     const { location: { pathname } } = window;
     const productID = pathname.slice(0, -1).split('/').pop();
-    $.get('/hooligan', { productID }, (data) => {
+    $.get('http://localhost:8002/hooligan', { productID }, (data) => {
       this.setState({
         reviews: data,
       });

@@ -5,3 +5,4 @@ import '../dist/styles.css';
 
 
 ReactDOM.render(<ReviewSection />, document.getElementById('reviewSection'));
+window.ReviewSection = ReviewSection;
