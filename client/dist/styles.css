@@ -92,9 +92,45 @@ body {
 }
 
 /* ------------------------------- */
+.keywordFilterSection {
+  width: 30rem;
+  /* border: 1px solid black; */
+  /* height: 15rem; */
+}
 
 .keywordFilterTitle {
-  
+  /* border: 1px solid black; */
+  margin: .5rem auto;
+}
+
+.keywordFilter {
+  /* border: 1px solid black; */
+  height: 7rem;
+  /* display: flex; */
+  word-wrap: word-break;
+  /* overflow: hidden; */
+  margin: .5rem;
+}
+
+.hotWordWrapper {
+  /* border: 1px solid black; */
+  height: 29px;
+  float: left;
+  margin: .25rem;
+}
+
+.hotWordWrapper:hover {
+  cursor: pointer;
+}
+
+.hotWord {
+  background-color: #D7E8EA;
+  border-bottom: solid 1px #969696;
+  /* display: inline-block; */
+  margin: 1rem .25rem;
+  padding: 5px 14px;
+  line-height: 29px;
+  font-size: 13px;
 }
 
 /* ======= CUSTOMER IMAGES ================================================================ */

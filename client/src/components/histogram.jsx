@@ -63,41 +63,44 @@ const KeywordFilter = (props) => {
         <p className="totalReviews">{reviews.length}</p>
       </div>
       <p className="smallTextLink average">{average} out of 5 stars</p>
-      <div className="histogramBar">
-        <p className="smallTextLink">5 star</p>
-        <div className="outerBar">
-          <div className="innerBar five-star" style={{ width: `${calculatePercent(5)}%` }} />
+      <div id="histogramGraph">
+        <div className="histogramBar">
+          <p className="smallTextLink">5 star</p>
+          <div className="outerBar">
+            <div className="innerBar five-star" style={{ width: `${calculatePercent(5)}%` }} />
+          </div>
+          <p className="smallTextLink percent">{calculatePercent(5)}%</p>
         </div>
-        <p className="smallTextLink percent">{calculatePercent(5)}%</p>
-      </div>
-      <div className="histogramBar">
-        <p className="smallTextLink">4 star</p>
-        <div className="outerBar">
-          <div className="innerBar four-star" style={{ width: `${calculatePercent(4)}%` }} />
+        <div className="histogramBar">
+          <p className="smallTextLink">4 star</p>
+          <div className="outerBar">
+            <div className="innerBar four-star" style={{ width: `${calculatePercent(4)}%` }} />
+          </div>
+          <p className="smallTextLink percent">{calculatePercent(4)}%</p>
         </div>
-        <p className="smallTextLink percent">{calculatePercent(4)}%</p>
-      </div>
-      <div className="histogramBar">
-        <p className="smallTextLink">3 star</p>
-        <div className="outerBar">
-          <div className="innerBar three-star" style={{ width: `${calculatePercent(3)}%` }} />
+        <div className="histogramBar">
+          <p className="smallTextLink">3 star</p>
+          <div className="outerBar">
+            <div className="innerBar three-star" style={{ width: `${calculatePercent(3)}%` }} />
+          </div>
+          <p className="smallTextLink percent">{calculatePercent(3)}%</p>
         </div>
-        <p className="smallTextLink percent">{calculatePercent(3)}%</p>
-      </div>
-      <div className="histogramBar">
-        <p className="smallTextLink">2 star</p>
-        <div className="outerBar">
-          <div className="innerBar two-star" style={{ width: `${calculatePercent(2)}%` }} />
+        <div className="histogramBar">
+          <p className="smallTextLink">2 star</p>
+          <div className="outerBar">
+            <div className="innerBar two-star" style={{ width: `${calculatePercent(2)}%` }} />
+          </div>
+          <p className="smallTextLink percent">{calculatePercent(2)}%</p>
         </div>
-        <p className="smallTextLink percent">{calculatePercent(2)}%</p>
-      </div>
-      <div className="histogramBar">
-        <p className="smallTextLink">1 star</p>
-        <div className="outerBar">
-          <div className="innerBar one-star" style={{ width: `${calculatePercent(1)}%` }} />
+        <div className="histogramBar">
+          <p className="smallTextLink">1 star</p>
+          <div className="outerBar">
+            <div className="innerBar one-star" style={{ width: `${calculatePercent(1)}%` }} />
+          </div>
+          <p className="smallTextLink percent">{calculatePercent(1)}%</p>
         </div>
-        <p className="smallTextLink percent">{calculatePercent(1)}%</p>
       </div>
+      <span className="smallTextLink">See all {reviews.length} customer reviews</span>
     </div>
   );
 };

@@ -1,11 +1,11 @@
 import React from 'react';
 
 const KeywordFilter = (props) => {
-  const {} = props;
+  const { hotWord } = props;
 
   return (
-    <div>
-      <h4 className="keywordFilterTitle">Read reviews that mention</h4>
+    <div className="hotWordWrapper">
+      <span className="hotWord">{hotWord}</span>
     </div>
   );
 };
