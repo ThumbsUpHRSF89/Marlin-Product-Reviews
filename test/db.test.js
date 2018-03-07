@@ -18,7 +18,7 @@ describe('Database Testing', () => {
       if (err) {
         throw err;
       } else {
-        console.log('yaaay data stored succesfully');
+        console.log('yaaay, review data stored succesfully');
       }
     });
 
