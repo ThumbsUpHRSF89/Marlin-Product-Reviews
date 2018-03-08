@@ -18,7 +18,6 @@ app.use(cors());
 
 app.get('/hooligan', (req, res) => {
   const { productID } = req.query;
-  console.log('req.query', req.query);
   reviewController.findByProductID(productID, (err, data) => {
     if (err) {
       throw err;
