@@ -5,14 +5,17 @@ import Histogram from './components/histogram';
 import CustomerImages from './components/customerImages';
 import RecentReviews from './components/recentReviews';
 import KeywordFilter from './components/keywordFilter';
-import TopCustomerReviews from './components/reviewList';
+import TopCustomerReviews from './components/topCustomerReviews';
 
 class ReviewSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: [],
+      allReviews: [],
+      currentViewReviews: [],
       hotWordsArray: [],
+      topCustomerReviewsTitle: 'Top Customer Reviews',
+      filter: 'none',
     };
   }
 
@@ -24,7 +27,7 @@ class ReviewSection extends React.Component {
     const { location: { pathname } } = window;
     const productID = pathname.slice(0, -1).split('/').pop();
     $.get('http://localhost:8002/hooligan', { productID }, (data) => {
-      console.log(data);
+      // console.log(data);
       const hotWords = {};
       let hotWordsArray = [];
       data.map((review) => {
@@ -57,28 +60,52 @@ class ReviewSection extends React.Component {
         hotWordsArray = Object.keys(hotWords);
       });
       this.setState({
-        reviews: data,
+        allReviews: data,
+        currentViewReviews: data,
         hotWordsArray,
       });
     });
   }
 
+  keyWordClickHandler(e) {
+    if (this.state.filter === e.target.id) {
+      this.setState({
+        currentViewReviews: this.state.allReviews,
+        filter: 'none',
+      });
+    } else {
+      console.log(this.state.allReviews);
+      const reviewsWithKeyWord = this.state.allReviews.filter((review) => {
+        if (review.text.indexOf(e.target.id) !== -1 || review.header.indexOf(e.target.id) !== -1) {
+          return true;
+        }
+      });
+
+      console.log('filtered results:', reviewsWithKeyWord);
+      this.setState({
+        currentViewReviews: reviewsWithKeyWord,
+        filter: e.target.id,
+      });
+    }
+  }
+
   render() {
+    // console.log('currentViewReviews:', this.state.currentViewReviews, 'allReviews:', this.state.allReviews, 'filter:', this.state.filter);
     return (
       <div className="fullPage">
         <div className="left-column">
           <h3 className="sectionTitle">Customer Reviews</h3>
           <div className="histogram">
-            <Histogram reviews={this.state.reviews} />
+            <Histogram reviews={this.state.allReviews} />
           </div>
           <div className="keywordFilterSection">
             <h4 className="keywordFilterTitle">Read reviews that mention</h4>
             <div className="keywordFilter">
-              {this.state.hotWordsArray.map(hotWord => <KeywordFilter hotWord={hotWord} key={hotWord} />)}
+              {this.state.hotWordsArray.map(hotWord => <KeywordFilter hotWord={hotWord} keyWordClick={this.keyWordClickHandler.bind(this)} key={hotWord} />)}
             </div>
           </div>
           <div id="topCustomerReviews">
-            <TopCustomerReviews reviews={this.state.reviews} />
+            <TopCustomerReviews reviews={this.state.currentViewReviews} title={this.state.topCustomerReviewsTitle} />
           </div>
         </div>
         <div className="right-column">

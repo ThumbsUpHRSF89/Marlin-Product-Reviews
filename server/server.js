@@ -11,10 +11,13 @@ const port = process.env.PORT || 8002;
 mongoose.connect('mongodb://localhost/hackazonReviews');
 
 app.use(bodyParser.json());
-// console.log(path.join(__dirname, '/../client/dist/'));
-app.use('/product/:id', express.static(path.join(__dirname, '/../client/dist/')));
-// app.use('/product/:id/', express.static(path.join(__dirname, '/../client/dist/images')));
 app.use(cors());
+
+// FOR PRODUCTION:
+// app.use('/', express.static(path.join(__dirname, '/../client/dist/')));
+
+// FOR DEVELOPMENT:
+app.use('/product/:id/', express.static(path.join(__dirname, '/../client/dist/')));
 
 app.get('/hooligan', (req, res) => {
   const { productID } = req.query;

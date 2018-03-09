@@ -11,13 +11,21 @@ class TopCustomerReviews extends React.Component {
       reviews: [],
       currentPage: 1,
       totalPages: 0,
+      newReviewsInProps: false,
     };
   }
 
   componentDidUpdate() {
     // console.log('reviewList, componentDidUpdate, props:', this.props);
     // console.log('reviewList, comonentDidUpdate, state:', this.state);
-    if (this.state.reviews.length === 0) {
+
+    // conditions below are to make sure this.getData() function executes when props have changed and state needs to update,
+    // otherwise don't run did update again or it will infinite
+
+    // JSON.stringify(this.state.reviews) !== JSON.stringify(this.props.reviews)
+    // this.state.reviews === 0
+
+    if (this.state.newReviewsInProps === false) {
       this.getData();
     }
   }
@@ -29,7 +37,7 @@ class TopCustomerReviews extends React.Component {
     }
     this.setState({
       reviews,
-      totalPages: this.props.reviews.length / 5,
+      totalPages: Math.ceil(this.props.reviews.length / 5),
     });
   }
 
@@ -82,7 +90,7 @@ class TopCustomerReviews extends React.Component {
   }
 
   render() {
-    // console.log('RENDER:', this.state.totalPages);
+    // console.log('it is rerendering', this.props.reviews);
     const buttons = [];
     for (let i = 1; i <= this.state.totalPages; i += 1) {
       buttons.push(i);
@@ -90,7 +98,7 @@ class TopCustomerReviews extends React.Component {
 
     return (
       <div>
-        <h4>Top Customer Reviews</h4>
+        <h4>{this.props.title}</h4>
         <div className="navButtons">
           <button className="previous" onClick={this.prevClickHandler.bind(this)}>Previous</button>
           {buttons.map(pageNumber => <PageButtons pageClickHandler={this.pageClickHandler.bind(this)} pageNumber={pageNumber} key={pageNumber} />)}

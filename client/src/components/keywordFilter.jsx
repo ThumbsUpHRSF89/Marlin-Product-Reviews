@@ -5,7 +5,7 @@ const KeywordFilter = (props) => {
 
   return (
     <div className="hotWordWrapper">
-      <span className="hotWord">{hotWord}</span>
+      <span className="hotWord" id={hotWord} onClick={props.keyWordClick}>{hotWord}</span>
     </div>
   );
 };
