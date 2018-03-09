@@ -133,6 +133,16 @@ body {
   font-size: 13px;
 }
 
+.hotWordHighlight{
+  background-color: #00464F;
+  padding: 0px 14px;
+  line-height: 29px;
+  margin: 0px 10px 14px 0px;
+  border-bottom: solid 1px #969696;
+  display: inline-block;
+  font-size: 13px;
+}
+
 /* ======= CUSTOMER IMAGES ================================================================ */
 
 .customerImagesSection {
