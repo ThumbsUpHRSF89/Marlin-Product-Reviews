@@ -80,6 +80,7 @@ class ReviewSection extends React.Component {
         allReviews: this.state.allReviewsHolder,
         filter: null,
         totalPages: Math.ceil(this.state.allReviewsHolder.length / this.state.reviewsPerPage),
+        topCustomerReviewsTitle: 'Top Customer Reviews',
       });
     } else {
       const reviewsWithKeyWord = this.state.allReviewsHolder.filter((review) => {
@@ -93,6 +94,7 @@ class ReviewSection extends React.Component {
         allReviews: reviewsWithKeyWord,
         filter: e.target.id,
         totalPages: Math.ceil(reviewsWithKeyWord.length / this.state.reviewsPerPage),
+        topCustomerReviewsTitle: `Showing reviews with "${e.target.id}"`,
       });
     }
   }
