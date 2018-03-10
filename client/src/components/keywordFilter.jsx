@@ -1,11 +1,15 @@
 import React from 'react';
 
 const KeywordFilter = (props) => {
-  const { hotWord } = props;
+  const { hotWord, filter } = props;
+  let className = 'hotWord';
+  if (hotWord === filter) {
+    className = 'hotWordHighlight';
+  }
 
   return (
     <div className="hotWordWrapper">
-      <span className="hotWord">{hotWord}</span>
+      <span className={className} id={hotWord} onClick={props.keyWordClick}>{hotWord}</span>
     </div>
   );
 };
