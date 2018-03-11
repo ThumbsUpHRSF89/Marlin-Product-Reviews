@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  padding-left: .75rem;
+  /* padding-left: .75rem; */
 }
 
 .fullPage {
@@ -130,6 +130,16 @@ body {
   margin: 1rem .25rem;
   padding: 5px 14px;
   line-height: 29px;
+  font-size: 13px;
+}
+
+.hotWordHighlight{
+  background-color: #00464F;
+  padding: 0px 14px;
+  line-height: 29px;
+  margin: 0px 10px 14px 0px;
+  border-bottom: solid 1px #969696;
+  display: inline-block;
   font-size: 13px;
 }
 
