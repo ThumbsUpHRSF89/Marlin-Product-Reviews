@@ -30,7 +30,7 @@ class ReviewSection extends React.Component {
   getData() {
     const { location: { pathname } } = window;
     const productID = pathname.slice(0, -1).split('/').pop();
-    $.get('http://localhost:8002/hooligan', { productID }, (data) => {
+    $.get('http://localhost:8002/productReviews', { productID }, (data) => {
       // console.log(data);
       const hotWords = {};
       let hotWordsArray = [];
@@ -66,7 +66,7 @@ class ReviewSection extends React.Component {
       this.setState({
         allReviewsHolder: data,
         allReviews: data,
-        currentViewReviews: data.slice(0, this.state.reviewsPerPage),
+        currentViewReviews: data.slice(0, this.state.reviewsPerPage - 1),
         hotWordsArray,
         totalPages: Math.ceil(data.length / this.state.reviewsPerPage),
       });

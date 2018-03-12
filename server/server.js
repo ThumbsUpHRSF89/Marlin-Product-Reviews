@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, '/../client/dist/')));
 // FOR DEVELOPMENT:
 // app.use('/product/:id/', express.static(path.join(__dirname, '/../client/dist/')));
 
-app.get('/hooligan', (req, res) => {
+app.get('/productReviews', (req, res) => {
   const { productID } = req.query;
   reviewController.findByProductID(productID, (err, data) => {
     if (err) {
