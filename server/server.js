@@ -8,13 +8,13 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 8002;
 
-mongoose.connect('mongodb://localhost/hackazonReviews');
+mongoose.connect('mongodb://database/hackazonReviews');
 
 app.use(bodyParser.json());
 app.use(cors());
 
 // FOR PRODUCTION:
-app.use('/', express.static(path.join(__dirname, '/../client/dist/')));
+app.use(express.static(path.join(__dirname, '/../client/dist/')));
 
 // FOR DEVELOPMENT:
 // app.use('/product/:id/', express.static(path.join(__dirname, '/../client/dist/')));
@@ -25,6 +25,7 @@ app.get('/hooligan', (req, res) => {
     if (err) {
       throw err;
     } else {
+      console.log('grabbing data from db...');
       res.json(data);
     }
   });

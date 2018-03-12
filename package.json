@@ -8,7 +8,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon server/server.js",
+    "start": "node db/seeder.js && nodemon server/server.js",
     "build": "webpack -d --watch",
     "dev": "mongod",
     "seed": "node db/seeder.js",
@@ -38,6 +38,7 @@
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.2",
+    "git": "^0.1.5",
     "jquery": "^3.3.1",
     "mongoose": "^5.0.6",
     "path": "^0.12.7",

@@ -1,0 +1,11 @@
+version: '2'
+services:
+  product_review:
+    build: .
+    depends_on:
+      - 'database'
+    ports:
+      - '8002:8002'
+  
+  database:
+    image: mongo:latest
