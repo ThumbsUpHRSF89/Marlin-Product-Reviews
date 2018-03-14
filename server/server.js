@@ -13,11 +13,7 @@ mongoose.connect('mongodb://database/hackazonReviews');
 app.use(bodyParser.json());
 app.use(cors());
 
-// FOR PRODUCTION:
 app.use(express.static(path.join(__dirname, '/../client/dist/')));
-
-// FOR DEVELOPMENT:
-// app.use('/product/:id/', express.static(path.join(__dirname, '/../client/dist/')));
 
 app.get('/productReviews', (req, res) => {
   const { productID } = req.query;

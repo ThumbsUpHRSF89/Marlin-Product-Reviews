@@ -69,6 +69,7 @@ class ReviewSection extends React.Component {
         currentViewReviews: data.slice(0, this.state.reviewsPerPage - 1),
         hotWordsArray,
         totalPages: Math.ceil(data.length / this.state.reviewsPerPage),
+        reviewsPerPage: 5,
       });
     });
   }
@@ -81,6 +82,7 @@ class ReviewSection extends React.Component {
         filter: null,
         totalPages: Math.ceil(this.state.allReviewsHolder.length / this.state.reviewsPerPage),
         topCustomerReviewsTitle: 'Top Customer Reviews',
+        reviewsPerPage: 5,
       });
     } else {
       const reviewsWithKeyWord = this.state.allReviewsHolder.filter((review) => {
@@ -90,7 +92,7 @@ class ReviewSection extends React.Component {
       });
 
       this.setState({
-        currentViewReviews: reviewsWithKeyWord,
+        currentViewReviews: reviewsWithKeyWord.slice(0, this.state.reviewsPerPage - 1),
         allReviews: reviewsWithKeyWord,
         filter: e.target.id,
         totalPages: Math.ceil(reviewsWithKeyWord.length / this.state.reviewsPerPage),
@@ -106,7 +108,9 @@ class ReviewSection extends React.Component {
       const start = (currentPage * this.state.reviewsPerPage) - this.state.reviewsPerPage;
       const end = currentPage * this.state.reviewsPerPage;
       for (let i = start; i < end; i += 1) {
-        currentViewReviews.push(this.state.allReviews[i]);
+        if (this.state.allReviews[i] !== undefined) {
+          currentViewReviews.push(this.state.allReviews[i]);
+        }
       }
       this.setState({
         currentPage,
@@ -123,7 +127,9 @@ class ReviewSection extends React.Component {
       const start = (currentPage * this.state.reviewsPerPage) - this.state.reviewsPerPage;
       const end = currentPage * this.state.reviewsPerPage;
       for (let i = start; i < end; i += 1) {
-        currentViewReviews.push(this.state.allReviews[i]);
+        if (this.state.allReviews[i] !== undefined) {
+          currentViewReviews.push(this.state.allReviews[i]);
+        }
       }
       this.setState({
         currentPage,
@@ -141,7 +147,9 @@ class ReviewSection extends React.Component {
       const start = (currentPage * this.state.reviewsPerPage) - this.state.reviewsPerPage;
       const end = currentPage * this.state.reviewsPerPage;
       for (let i = start; i < end; i += 1) {
-        currentViewReviews.push(this.state.allReviews[i]);
+        if (this.state.allReviews[i] !== undefined) {
+          currentViewReviews.push(this.state.allReviews[i]);
+        }
       }
       this.setState({
         currentPage,
